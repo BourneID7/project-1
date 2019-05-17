@@ -1,0 +1,12 @@
+.jumbotron {
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 15px;
+}
+
+body {
+    background-image: url("../images/fancy.jpg");
+}
