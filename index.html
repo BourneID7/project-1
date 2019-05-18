@@ -2,76 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>How Broke are You?</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
-
 <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">How broke are you?</h1>
         <p class="lead">Find restaurants to fit your budget</p>
       </div>
-    </div
-    >
+    </div> <!-- end jumbtron -->
     <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="zipcode">Where are you?</label>
-          <input type="number" class="form-control" id="zipcode" placeholder="Enter zipcode">
-        </div>
-
-        <div class="form-group">
-          <label for="distance">Max distance</label>
-          <select class="form-control" id="distance">
-            <option>5 miles</option>
-            <option>10 miles</option>
-            <option>15 miles</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="foodType">Type of food</label>
-          <select class="form-control" id="foodType">
-            <option value="american">American</option>
-            <option value="burgers">Burgers</option>
-            <option value="chinese">Chinese</option>
-            <option value="fastFood">Fast Food</option>
-            <option value="indian">Indian</option>
-            <option value="italian">Italian</option>
-            <option value="mexican">Mexican</option>
-            <option value="pizza">Pizza</option>
-            <option value=sushi>Sushi</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="priceRange">How broke are you?</label>
-          <select class="form-control" id="priceRange">
-            <option value="1">I live off Ramen noodles</option>
-            <option value="2">Fast food is more my speed</option>
-            <option value="3">I don't mind spending some some cash</option>
-            <option value="4">I just got paid. Let's go gourmet!</option>
-          </select>
-        </div>
-
-        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-        
-      </form>
-    </div>
-
-
-
-
-
-
-
-
-
+      <div id="formDisplay">
+        <form>
+            <div class="form-group">
+              <label for="zipcode">Where are you?</label>
+              <input type="number" class="form-control" id="zipcode" placeholder="Enter zipcode">
+            </div>
+            <div class="form-group">
+              <label for="distance">Max distance</label>
+              <select class="form-control" id="distance">
+                <option value="8047">5 miles</option>
+                <option value="16093">10 miles</option>
+                <option value="24140">15 miles</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="foodType">Type of food</label>
+              <select class="form-control" id="foodType">
+                <option value="american">American</option>
+                <option value="burgers">Burgers</option>
+                <option value="chinese">Chinese</option>
+                <option value="fastFood">Fast Food</option>
+                <option value="indian">Indian</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="pizza">Pizza</option>
+                <option value=sushi>Sushi</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="priceRange">How broke are you?</label>
+              <select class="form-control" id="priceRange">
+                <option value="1">I live off Ramen noodles</option>
+                <option value="2">Fast food is more my speed</option>
+                <option value="3">I don't mind spending some some cash</option>
+                <option value="4">I just got paid. Let's go gourmet!</option>
+              </select>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div> <!-- end formDisplay -->
+      <div id="resultsDisplay">
+        <div id="userChoices"></div>
+        <div class="row">
+            <div class="col-md-8" id="results">
+                <div class="card">
+                    <div class="card-header">
+                      Your Restaurant Results
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4" id="gifs"></div>
+          </div>
+      </div> <!-- end resultsDisplay -->
+    </div> <!-- end container -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
