@@ -10,3 +10,8 @@
 body {
     background-image: url("../images/fancy.jpg");
 }
+.gif {
+    max-width: 100%;
+    width: 340px;
+    padding-bottom: 10px;
+}
