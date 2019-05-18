@@ -17,10 +17,7 @@ $("#submit").on("click", function(event) {
   
     }).then(function(response) {      
 
-      console.log(response);
-
-      
-     
+      console.log(response);     
 
 });
 
@@ -32,6 +29,9 @@ $("#resultsDisplay").show();
 
 })
 
+
+
+      
 
          
 
