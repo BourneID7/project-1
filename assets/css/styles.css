@@ -10,6 +10,9 @@
 body {
     background-image: url("../images/fancy.jpg");
 }
+#gifs {
+    text-align: center;
+}
 .gif {
     max-width: 100%;
     width: 340px;
