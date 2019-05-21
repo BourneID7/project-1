@@ -11,9 +11,11 @@ $(document).ready(function() {
     var userChoices = $(this).data();
     var price = $("#priceRange").val();
     var food = $("#foodType").val();
+    var cuisine;
     var distance = $("#distance").val();
     var city = $("#city").val().trim().toLowerCase();
-          
+
+    // first query locations endpoint to get city id      
     var cityId = "https://developers.zomato.com/api/v2.1/locations?query=" + city + "&count=1&apikey=fc365d62a0c922660dbdd5fbb407fa71";
     $.ajax({
       url: cityId,
@@ -23,20 +25,42 @@ $(document).ready(function() {
 
       console.log(response); 
       var entityId = response.location_suggestions[0].entity_id;
+      var lat = response.location_suggestions[0].latitude;
+      var long = response.location_suggestions[0].longitude;
+
       console.log(entityId);
-      var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=city&count=10&sort=cost&order=asc" + "&apikey=fc365d62a0c922660dbdd5fbb407fa71";
+
+      // if else to assign zomato cuisine IDs to food input values
+      if (food === "american") {
+        cuisine = 1;
+      } else if (food === "burgers") {
+          cuisine = 168;
+      } else if (food === "chinese") {
+          cuisine = 25;
+      } else if (food === "fastFood") {
+          cuisine = 40;
+      } else if (food === "indian") {
+          cuisine = 148;
+      } else if (food === "italian") {
+          cuisine = 55;
+      } else if (food === "mexican") {
+          cuisine = 73;
+      } else if (food === "pizza") {
+          cuisine = 82;
+      } else if (food === "sushi") {
+          cuisine = 177;
+      };
+
+      // second query endpoint search to combine all parameters from form except price
+      var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=city&lat=" + lat + "&lon=" + long + "&radius=" + distance + "&cuisines=" + cuisine + "&sort=real_distance&order=asc&apikey=fc365d62a0c922660dbdd5fbb407fa71";
       
       $.ajax({
         url: queryURL,
         method: "GET"
     
-      }).then(function(response) {      
-
-        console.log(response); 
-      
-      });
-  
-  
+        }).then(function(response) {      
+          console.log(response); 
+        });
     });
 
     // query giphy api to get images of chosen type of food
@@ -63,15 +87,14 @@ $(document).ready(function() {
           $("#gifs").append(gifDiv);
           gifDiv.append(gifpic);
       }
-    })
+    });
     }
 
     $("#formDisplay").hide();
     $("#resultsDisplay").show();
     displayGif();
 
-  })
-
+  });
 
 })
 
