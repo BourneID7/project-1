@@ -11,22 +11,27 @@ $("#submit").on("click", function(event) {
    var price = $("#priceRange").val();
    var food = $("#foodType").val();
    var distance = $("#distance").val();
-   var city = $("#city").val().trim().toLowerCase();
+   var cityName = $("#city").val().trim().toLowerCase();
         
     // var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + city + "&price_range" + price + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
 
-    var queryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city + "&count=10&radius=" + distance + "&cuisines="+ food + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
+    var citySearchURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cityName + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
+
+    // var cuisinesSearchURL = "https://developers.zomato.com/api/v2.1/cuisines?q=" + food + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
+
+    // var queryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city + "&price_range" + price + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
 
 
     $.ajax({
-      url: queryURL,
+      url: citySearchURL,
+      // url: cuisinesSearchURL,
       method: "GET",
   
     }).then(function(response) {      
 
       console.log(response); 
 
-
+ 
     
     });
 
@@ -39,9 +44,17 @@ $("#resultsDisplay").show();
 })
 
 
-
+// cuisine ID's
       
-
+// var american = 1
+// var burger = 168
+// var chinese = 25
+// var fastfood = 40
+// var indian = 148
+// var italian = 55
+// var mexican = 73
+// var pizza = 82
+// var sushi = 177
          
 
 
