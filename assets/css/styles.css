@@ -2,11 +2,19 @@
     text-align: center;
 }
 
-.container {
+.white-bg {
     background-color: white;
     padding: 15px;
 }
 
 body {
     background-image: url("../images/fancy.jpg");
+}
+#gifs {
+    text-align: center;
+}
+.gif {
+    max-width: 100%;
+    width: 340px;
+    padding-bottom: 10px;
 }
