@@ -8,10 +8,16 @@
     color: #f9eed8;
     font-family: 'Luckiest Guy', cursive;
 }
+.display-4 {
+    font-size: 4rem;
+}
+.lead {
+    font-size: 1.5rem;
+}
 
 .form-group {
     font-family: 'Changa', sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 .white-bg {
@@ -34,10 +40,17 @@ body {
     margin-bottom: 20px;
     padding: 10px;
 }
+h5 {
+    font-family: 'Changa', sans-serif;
+    font-size: 1.3rem;
+    border-bottom: #282828 2px solid;
+    padding-right: 20px;
+}
+
 .btn-dark {
     background: #282828;
 }
 .webBtn {
-    width: 150px;
-    margin-top: 10px;
+    width: 120px;
+    margin: 10px;
 }
