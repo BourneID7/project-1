@@ -18,3 +18,10 @@ body {
     width: 340px;
     padding-bottom: 10px;
 }
+.card {
+    margin-bottom: 20px;
+}
+.webBtn {
+    width: 150px;
+    margin: 10px;
+}
