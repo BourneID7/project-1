@@ -72,29 +72,48 @@ $(document).ready(function() {
 
           // display restaurant results
           var restResults = filteredResults;
-          for (var i = 0; i < restResults.length; i++) {
-            var restDiv = $('<div class="card">');
-            var restH5 = $('<h5 class=""card-header>');
-            var restpic= $('<img class="card-img-top">');
-            var restP = $('<p class="card-text">');
-            var restA = $('<a class="btn btn-dark webBtn">');
-            var restName = restResults[i].restaurant.name;
-            var restpicurl = restResults[i].restaurant.photos_url;
-            var restLoc = restResults[i].restaurant.location.address
-            var resturl = restResults[i].restaurant.url
-            restH5.text(restName)
-            restA.attr("href", resturl)
-            restA.text("Check it out!")
-            restP.text(restLoc)
-            restpic.attr("src", restpicurl);
-            restpic.attr("alt", "restaraunt");
+          
+          if (restResults.length==0){
+            var noresDiv = $('<div class="card">');
+            var noresP = ('<p class="card-text">');
+            noresP.text("You've been too picky. Try again or cook at home!");
+            var reloadButton = $('<button class="btn btn-dark webBtn">');
+            reloadButton.attr("id", "reload");
+            reloadButton.text("Try again");
+            noresDiv.append(noresP);
+            noresDiv.append(reloadButton);
+            $("#results").append(noresDiv);
+            $("#reload").on("click", function(event) {
+              event.preventDefault();
+              window.location.reload();
+            });
+          }
+          else {
+            for (var i = 0; i < restResults.length; i++) {
+              var restDiv = $('<div class="card">');
+              var restH5 = $('<h5 class=""card-header>');
+              var restpic= $('<img class="card-img-top">');
+              var restP = $('<p class="card-text">');
+              var restA = $('<a class="btn btn-dark webBtn">');
+              var restName = restResults[i].restaurant.name;
+              var restpicurl = restResults[i].restaurant.photos_url;
+              var restLoc = restResults[i].restaurant.location.address;
+              var resturl = restResults[i].restaurant.url;
+              restH5.text(restName);
+              restA.attr("href", resturl);
+              restA.text("Check it out!");
+              restP.text(restLoc);
+              restpic.attr("src", restpicurl);
+              restpic.attr("alt", "restaraunt");
 
-            $("#results").append(restDiv);
-            restDiv.append(restH5);
-            // restDiv.append(restpic);
-            restDiv.append(restP)
-            restDiv.append(restA)
+              $("#results").append(restDiv);
+              restDiv.append(restH5);
+              // restDiv.append(restpic);
+              restDiv.append(restP);
+              restDiv.append(restA);
+
         };
+      };  
     });
 
     // query giphy api to get images of chosen type of food
