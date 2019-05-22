@@ -72,6 +72,21 @@ $(document).ready(function() {
 
           // display restaurant results
           var restResults = filteredResults;
+
+          if (restResults.length==0){
+            var noresDiv = $('<div class="card">');
+            noresDiv.text("You've been too picky. Try again or cook at home!")
+            var reloadButton = $("<button>")
+            reloadButton.attr("id", "reload")
+            reloadButton.text("Try again")
+            noresDiv.append(reloadButton)
+            $("#results").append(noresDiv);
+            $("#reload").on("click", function(event) {
+            event.preventDefault()
+            window.location.reload()
+          })
+          }
+          else {
           for (var i = 0; i < restResults.length; i++) {
             var restDiv = $('<div class="card">');
             var restH5 = $('<h5 class=""card-header>');
@@ -94,6 +109,7 @@ $(document).ready(function() {
             // restDiv.append(restpic);
             restDiv.append(restP)
             restDiv.append(restA)
+          }
         };
     });
 
