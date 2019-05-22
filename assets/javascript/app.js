@@ -77,7 +77,7 @@ $(document).ready(function() {
             var restH5 = $('<h5 class=""card-header>');
             var restpic= $('<img class="card-img-top">');
             var restP = $('<p class="card-text">');
-            var restA = $('<a class="btn btn-primary webBtn">');
+            var restA = $('<a class="btn btn-dark webBtn">');
             var restName = restResults[i].restaurant.name;
             var restpicurl = restResults[i].restaurant.photos_url;
             var restLoc = restResults[i].restaurant.location.address
