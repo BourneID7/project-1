@@ -1,11 +1,10 @@
-# project-1
-Hanna Nenye Habib &amp; Marie
+# How Broke are You?
+By Hanna, Nenye, Habib, &amp; Marie
 
-## How broke are you?
 ## The food finder app based on price
 
-User chooses food type from dropdown list of options, inputs zipcode, radius from zipcode, and price range.
+Input your city and state. Then choose a food type from the dropdown list of options, how far you're willing to travel, and your price range.
 
-App returns restaurant results with chosen criteria sorted by price.
+The app returns restaurant results with chosen criteria and gifs of the type of food you chose.
 
 
