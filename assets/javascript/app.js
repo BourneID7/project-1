@@ -91,7 +91,7 @@ $(document).ready(function() {
 
             $("#results").append(restDiv);
             restDiv.append(restH5);
-            restDiv.append(restpic);
+            // restDiv.append(restpic);
             restDiv.append(restP)
             restDiv.append(restA)
         };
