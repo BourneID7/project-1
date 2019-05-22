@@ -20,8 +20,9 @@ body {
 }
 .card {
     margin-bottom: 20px;
+    padding: 10px;
 }
 .webBtn {
     width: 150px;
-    margin: 10px;
+    margin-top: 10px;
 }
