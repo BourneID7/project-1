@@ -15,6 +15,30 @@ $(document).ready(function() {
     var distance = $("#distance").val();
     var city = $("#city").val().trim().toLowerCase();
 
+    // display user choices at top of results screen above matching restaurant results
+    var userChoiceDiv = $('<div class="centered">');
+    var userChoiceH5 = $('<h5 class="dark">');
+    var userFoodP = $('<p>');
+    var userPriceP = $('<p>');
+    var priceDisplay = "";
+    if (price == 1) {
+        priceDisplay = "$";
+      } else if (price == 2) {
+        priceDisplay = "$$";
+      } else if (price == 3) {
+        priceDisplay = "$$$";
+      } else {
+        priceDisplay = "$$$$";
+      };
+    
+    userChoiceH5.text("Your Selections");
+    userFoodP.text("You chose: " + food.toUpperCase());
+    userPriceP.text("Your budget is: " + priceDisplay);
+    userChoiceDiv.append(userChoiceH5);
+    userChoiceDiv.append(userFoodP);
+    userChoiceDiv.append(userPriceP);
+    $("#userChoices").append(userChoiceDiv);
+
     // first query locations endpoint to get city id      
     var cityId = "https://developers.zomato.com/api/v2.1/locations?query=" + city + "&count=1&apikey=fc365d62a0c922660dbdd5fbb407fa71";
     $.ajax({
@@ -37,7 +61,7 @@ $(document).ready(function() {
           cuisine = 168;
       } else if (food === "chinese") {
           cuisine = 25;
-      } else if (food === "fastFood") {
+      } else if (food === "fast food") {
           cuisine = 40;
       } else if (food === "indian") {
           cuisine = 148;
@@ -73,9 +97,11 @@ $(document).ready(function() {
           // display restaurant results
           var restResults = filteredResults;
           
+          // if no results are found display message and reload button
+
           if (restResults.length==0){
             var noresDiv = $('<div class="card">');
-            var noresP = ('<p class="card-text">');
+            var noresP = $('<p class="card-text">');
             noresP.text("You've been too picky. Try again or cook at home!");
             var reloadButton = $('<button class="btn btn-dark webBtn">');
             reloadButton.attr("id", "reload");
@@ -88,6 +114,7 @@ $(document).ready(function() {
               window.location.reload();
             });
           }
+          // if results are found display restaurants
           else {
             for (var i = 0; i < restResults.length; i++) {
               var restDiv = $('<div class="card">');
@@ -120,9 +147,9 @@ $(document).ready(function() {
 
     function displayGif() {
       
-      var chosenfood = $("#foodType").val() + " food"
-      console.log (chosenfood)
-      var queryURL2 = "https://api.giphy.com/v1/gifs/search?api_key=Kc3B8vMettxiRAYXD1ePoUIDMSYc4Tf3&q="+chosenfood+"&limit=10&offset=0&rating=G&lang=en"
+      var chosenfood = $("#foodType").val() + " food";
+      console.log (chosenfood);
+      var queryURL2 = "https://api.giphy.com/v1/gifs/search?api_key=Kc3B8vMettxiRAYXD1ePoUIDMSYc4Tf3&q="+chosenfood+"&limit=10&offset=0&rating=G&lang=en";
       
       $.ajax({
         url: queryURL2,
