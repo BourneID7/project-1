@@ -8,10 +8,26 @@
     color: #f9eed8;
     font-family: 'Luckiest Guy', cursive;
 }
+<<<<<<< HEAD
 
 .form-group {
     font-family: 'Changa', sans-serif;
     font-size: 20px;
+=======
+.display-4 {
+    font-size: 4rem;
+    text-shadow:5px 5px 8px #000;
+}
+.lead {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow:5px 5px 8px #000;
+}
+
+.form-group {
+    font-family: 'Changa', sans-serif;
+    font-size: 1.3rem;
+>>>>>>> 7429e59cc5f7de817c2148cff84feed30b63a0f0
 }
 
 .white-bg {
@@ -29,4 +45,22 @@ body {
     max-width: 100%;
     width: 340px;
     padding-bottom: 10px;
+}
+.card {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+h5 {
+    font-family: 'Changa', sans-serif;
+    font-size: 1.3rem;
+    border-bottom: #282828 2px solid;
+    padding-right: 20px;
+}
+
+.btn-dark {
+    background: #282828;
+}
+.webBtn {
+    width: 120px;
+    margin: 10px;
 }
