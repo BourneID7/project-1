@@ -166,9 +166,9 @@ $(document).ready(function() {
           gifpic.attr("alt", "food");
           $("#gifs").append(gifDiv);
           gifDiv.append(gifpic);
-        }
+        };
       });
-      }
+    };
 
       $("#formDisplay").hide();
       $("#resultsDisplay").show();
