@@ -1,5 +1,17 @@
 .jumbotron {
     text-align: center;
+    /* background-color:black; */
+    background-image: url("../images/fast-food.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #f9eed8;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.form-group {
+    font-family: 'Changa', sans-serif;
+    font-size: 20px;
 }
 
 .white-bg {
@@ -8,7 +20,7 @@
 }
 
 body {
-    background-image: url("../images/fancy.jpg");
+    background-color: #282828;
 }
 #gifs {
     text-align: center;

@@ -1,33 +1,5 @@
 $(document).ready(function() {
 
-<<<<<<< HEAD
-  // hide results screen at page load
-$("#resultsDisplay").hide();
-
-// on submit hide form screen & show results screen
-$("#submit").on("click", function(event) {
-   event.preventDefault(); 
-
-   var userChoices = $(this).data();
-   var price = $("#priceRange").val();
-   var food = $("#foodType").val();
-   var distance = $("#distance").val();
-   var cityName = $("#city").val().trim().toLowerCase();
-        
-    // var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + city + "&price_range" + price + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
-
-    var citySearchURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cityName + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
-
-    // var cuisinesSearchURL = "https://developers.zomato.com/api/v2.1/cuisines?q=" + food + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
-
-    // var queryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city + "&price_range" + price + "&apikey=fc365d62a0c922660dbdd5fbb407fa71"
-
-
-    $.ajax({
-      url: citySearchURL,
-      // url: cuisinesSearchURL,
-      method: "GET",
-=======
     // hide results screen at page load
   $("#resultsDisplay").hide();
 
@@ -48,15 +20,10 @@ $("#submit").on("click", function(event) {
     $.ajax({
       url: cityId,
       method: "GET"
->>>>>>> 2d64d1749e7adcef922f52ec5398d9a6ccab0a0d
   
     }).then(function(response) {      
 
       console.log(response); 
-<<<<<<< HEAD
-
- 
-=======
       var entityId = response.location_suggestions[0].entity_id;
       var lat = response.location_suggestions[0].latitude;
       var long = response.location_suggestions[0].longitude;
@@ -90,7 +57,6 @@ $("#submit").on("click", function(event) {
       $.ajax({
         url: queryURL,
         method: "GET"
->>>>>>> 2d64d1749e7adcef922f52ec5398d9a6ccab0a0d
     
         }).then(function(response) {      
           console.log(response); 
