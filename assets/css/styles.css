@@ -8,6 +8,12 @@
     color: #f9eed8;
     font-family: 'Luckiest Guy', cursive;
 }
+<<<<<<< HEAD
+
+.form-group {
+    font-family: 'Changa', sans-serif;
+    font-size: 20px;
+=======
 .display-4 {
     font-size: 4rem;
     text-shadow:5px 5px 8px #000;
@@ -21,6 +27,7 @@
 .form-group {
     font-family: 'Changa', sans-serif;
     font-size: 1.3rem;
+>>>>>>> 7429e59cc5f7de817c2148cff84feed30b63a0f0
 }
 
 .white-bg {
