@@ -14,6 +14,8 @@ $(document).ready(function() {
     var cuisine;
     var distance = $("#distance").val();
     var city = $("#city").val().trim().toLowerCase();
+    var letters = /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\,\ ))[a-zA-Z\u0080-\u024F]+)*$/
+    if($("#city").val().match(letters)) {
 
     // display user choices at top of results screen above matching restaurant results
     var userChoiceDiv = $('<div>');
@@ -177,6 +179,7 @@ $(document).ready(function() {
       displayGif();
 
     });
+    
 
     // reset form to search again
     var searchAgainDiv = $('<div class="card">');
@@ -193,6 +196,14 @@ $(document).ready(function() {
     searchAgainDiv.append(reloadButton2);
     $("#reset").append(searchAgainDiv);
 
-  });
 
+
+    
+}
+ else {
+alert("Enter the real city name!");
+}
+
+  });
+  
 })
