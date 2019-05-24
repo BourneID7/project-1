@@ -16,8 +16,10 @@ $(document).ready(function() {
     var city = $("#city").val().trim().toLowerCase();
 
     // display user choices at top of results screen above matching restaurant results
-    var userChoiceDiv = $('<div class="centered">');
-    var userChoiceH5 = $('<h5 class="dark">');
+    var userChoiceDiv = $('<div>');
+    userChoiceDiv.attr("class", "centered");
+    var userChoiceH5 = $('<h5>');
+    userChoiceH5.attr("class", "dark");
     var userFoodP = $('<p>');
     var userPriceP = $('<p>');
     var priceDisplay = "";
