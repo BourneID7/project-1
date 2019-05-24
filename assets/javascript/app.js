@@ -14,6 +14,8 @@ $(document).ready(function() {
     var cuisine;
     var distance = $("#distance").val();
     var city = $("#city").val().trim().toLowerCase();
+    var letters = /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\,\ ))[a-zA-Z\u0080-\u024F]+)*$/
+    if($("#city").val().match(letters)) {
 
     // display user choices at top of results screen above matching restaurant results
     var userChoiceDiv = $('<div>');
@@ -177,7 +179,31 @@ $(document).ready(function() {
       displayGif();
 
     });
+    
+
+    // reset form to search again
+    var searchAgainDiv = $('<div class="card">');
+    var searchAgainP = $('<p>');
+    searchAgainP.attr("class", "card-text");
+    searchAgainP.text("Not what you were looking for?");
+    var reloadButton2 = $('<button id="reload2" class="btn btn-dark webBtn">');
+    reloadButton2.text("Try again");
+    $(document).on("click", "#reload2", function(event) {
+      event.preventDefault();
+      window.location.reload(true);
+    });
+    searchAgainDiv.append(searchAgainP);
+    searchAgainDiv.append(reloadButton2);
+    $("#reset").append(searchAgainDiv);
+
+
+
+    
+}
+ else {
+alert("Enter the real city name!");
+}
 
   });
-
+  
 })
