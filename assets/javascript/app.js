@@ -1,21 +1,23 @@
 $(document).ready(function() {
 
-    // hide results screen at page load
-  $("#resultsDisplay").hide();
+  // hide results screen at page load
+$("#resultsDisplay").hide();
 
-  // on submit hide form screen & show results screen
-  $("#submit").on("click", function(event) {
-    event.preventDefault(); 
+// on submit hide form screen & show results screen
+$("#submit").on("click", function(event) {
+  event.preventDefault(); 
 
-    // query zomato api to get restaurant results
-    var userChoices = $(this).data();
-    var price = $("#priceRange").val();
-    var food = $("#foodType").val();
-    var cuisine;
-    var distance = $("#distance").val();
-    var city = $("#city").val().trim().toLowerCase();
-    var letters = /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\,\ ))[a-zA-Z\u0080-\u024F]+)*$/
-    if($("#city").val().match(letters)) {
+  // query zomato api to get restaurant results
+  var userChoices = $(this).data();
+  var price = $("#priceRange").val();
+  var food = $("#foodType").val();
+  var cuisine;
+  var distance = $("#distance").val();
+  var city = $("#city").val().trim().toLowerCase();
+  
+  //city input validation
+  var letters = /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\,\ ))[a-zA-Z\u0080-\u024F]+)*$/
+  if($("#city").val().match(letters)) {
 
     // display user choices at top of results screen above matching restaurant results
     var userChoiceDiv = $('<div>');
@@ -179,8 +181,6 @@ $(document).ready(function() {
       displayGif();
 
     });
-    
-
     // reset form to search again
     var searchAgainDiv = $('<div class="card">');
     var searchAgainP = $('<p>');
@@ -196,14 +196,10 @@ $(document).ready(function() {
     searchAgainDiv.append(reloadButton2);
     $("#reset").append(searchAgainDiv);
 
-
-
-    
-}
- else {
-alert("Enter the real city name!");
-}
-
-  });
-  
+  // end of validation, alert if not valid alpha characters    
+  }
+  else {
+    alert("Enter the real city name!");
+  };
+});
 })
