@@ -199,7 +199,7 @@ $("#submit").on("click", function(event) {
   // end of validation, alert if not valid alpha characters    
   }
   else {
-    alert("Enter the real city name!");
+    $('#nocity').modal("show");
   };
 });
 })
