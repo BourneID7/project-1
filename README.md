@@ -11,4 +11,6 @@ Input your city and state. Then choose a food type from the dropdown list of opt
 
 The app returns restaurant results with chosen criteria and gifs of the type of food you chose.
 
+View the app: https://bourneid7.github.io/project-1/
+
 
