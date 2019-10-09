@@ -9,11 +9,11 @@ Input your city and state. Then choose a food type from the dropdown list of opt
 No installations are required to run this simple app on a development server. Simply clone the repo.
 
 ## Technologies Used
-JavaScript
-HTML5/CSS3
-Bootstrap CSS
-Zomato API
-Giphy API
+* JavaScript
+* HTML5/CSS3
+* Bootstrap CSS
+* Zomato API
+* Giphy API
 
-<img src="images/restaurant-screenshot_600x300.jpg" alt="Restaurant Finder" />
+<img src="assets/images/restaurant-screenshot_600x300.jpg" alt="Restaurant Finder" />
 
